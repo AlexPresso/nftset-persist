@@ -1,6 +1,6 @@
 # nfset-persist
 
-A tool to download and persist ip-lists used in an nftables set.  
+A tool to download and persist ip-lists (re-injected on reload/reboot) used in an nftables set.  
 The script is based on the nftables scripting API, and stores them in a `/etc/nftables` directory.
 
 ## Usage
