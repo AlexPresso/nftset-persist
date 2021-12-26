@@ -6,7 +6,8 @@ The script is based on the nftables scripting API, and stores them in a `/etc/nf
 ## Usage
 
 - add `include "/etc/nftables/*.nft"` in your `/etc/nftables.conf` file
-- `nfset-persist <set name> <ip-list URL>` (i.e. `nfset-persist cloudflareip4 https://www.cloudflare.com/ips-v4`)
+- `nfset-persist <set name> <ip-list URL>`  
+ (i.e. `nfset-persist cloudflareip4 https://www.cloudflare.com/ips-v4`)
 - declare your set and use it in a rule
 ```
 set cloudflareip4 {
@@ -23,7 +24,7 @@ tcp dport https ip saddr @cloudflareip4 accept
 
 ## Final configuration file example
 
-```
+```sh
 #!/usr/sbin/nft -f
 
 flush ruleset
