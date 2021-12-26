@@ -31,10 +31,10 @@ flush ruleset
 include "/etc/nftables/*.nft"
 
 table inet firewall {
-        set cloudflareip {
+        set cloudflareip4 {
                 type ipv4_addr
                 flags interval
-                elements = $cloudflareip
+                elements = $cloudflareip4
         }
         set cloudflareip6 {
                 type ipv6_addr
@@ -50,7 +50,7 @@ table inet firewall {
 
                 iif lo accept
 
-                tcp dport https ip saddr @cloudflareip accept
+                tcp dport https ip saddr @cloudflareip4 accept
                 tcp dport https ip6 saddr @cloudflareip6 accept
         }
         chain forward {
